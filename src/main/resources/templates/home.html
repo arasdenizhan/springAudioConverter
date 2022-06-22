@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Converter - Denizhan Aras</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body class="body">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" th:action="@{/convert}" th:object="${fileDto}">
+            <label class="body-element" for="data">Music to Convert</label>
+            <input class="body-element" type="file" id="data" name="data" th:field="*{data}"><p/>
+            <label class="body-element" for="targetType">Target Type:</label>
+            <select class="body-element" name="targetType" id="targetType" th:field="*{targetType}">
+                <option value="wav">WAV</option>
+                <option value="aiff">AIFF</option>
+                <option value="au">AU</option>
+            </select><p/>
+            <input class="body-element" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
